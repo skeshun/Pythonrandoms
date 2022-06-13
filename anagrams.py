@@ -1,5 +1,5 @@
 # Check if two words are anagrams 
-# Example:
+# Solve for anagrams using pyenchant
 from itertools import permutations,combinations
 import enchant
 
@@ -10,8 +10,7 @@ letters = [chr for chr in word]
 repeatedword = []
 
 def find_anagram(word, anagram):
-    # [assignment] Add your code here
-    
+   
     if (sorted(word) == sorted(anagram)):
         return True
     else:
@@ -23,7 +22,7 @@ def find_anagram(word, anagram):
 def solve_anagram(word,dictionary,letters,repeatedword):
     for number in range(3,len(letters)+1): #For Loop
         for current_set in combinations(letters,number): #Combinations Function
-            #Code for the Basic Anagram Finder
+            #solving the anagram
             for current in permutations(current_set):
                 current_word = ''.join(current)
                 if dictionary.check(current_word)and current_word not in repeatedword:
